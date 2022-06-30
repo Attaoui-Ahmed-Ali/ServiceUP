@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 import ma.ac.emi.ginf.exam.models.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>{
+public interface UserRepository extends JpaRepository<User, Long>{
 	User findByMailAndPassword(String mail, String password);
+
 
 }
