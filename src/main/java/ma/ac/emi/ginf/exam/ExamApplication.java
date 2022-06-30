@@ -29,6 +29,8 @@ public class ExamApplication {
 		return args -> {
 			ur.save(new User("hamzachafkan@student.emi.ac.ma", "Hamza CHAFKAN","123", UserType.Etudiant));
 			ur.save(new User("hamzachafkan@emi.ac.ma", "Hamza CHAFKAN","123", UserType.Enseignant));
+			ur.save(new User("hamzachafkan1@student.emi.ac.ma", "Hamza CHAFKAN","123", UserType.Etudiant));
+			ur.save(new User("hamzachafkan2@student.emi.ac.ma", "Hamza CHAFKAN","123", UserType.Etudiant));
 //			ur.save()
 		};
 	}
