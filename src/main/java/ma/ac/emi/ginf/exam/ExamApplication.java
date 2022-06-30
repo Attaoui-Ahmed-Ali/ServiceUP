@@ -2,6 +2,7 @@ package ma.ac.emi.ginf.exam;
 
 import java.util.Scanner;
 
+import ma.ac.emi.ginf.exam.models.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,13 +27,8 @@ public class ExamApplication {
 	@Bean
 	public CommandLineRunner console() {
 		return args -> {
-			System.out.println("-----------------Execution-----------");
-			User eleve = ur.findUser("admin", "admin");
-			System.out.println(eleve);
-			
-			System.out.println("--------------Fin---------------");
-
-			new Scanner(System.in).next();
+			ur.save(new User("hamzachafkan@student.emi.ac.ma", "Hamza CHAFKAN","123", UserType.Etudiant));
+			ur.save(new User("hamzachafkan@emi.ac.ma", "Hamza CHAFKAN","123", UserType.Etudiant));
 		};
 	}
 }

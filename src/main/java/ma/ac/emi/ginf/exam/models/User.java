@@ -1,10 +1,6 @@
 package ma.ac.emi.ginf.exam.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,7 +8,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity
 public class User {
 	
-	@Id @Column(insertable=false, updatable = false)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable = false, insertable = false, updatable = false)
 	private int id;
 	
 	@Column(insertable=false, updatable = false)
@@ -22,7 +20,7 @@ public class User {
 	private String username;
 	
 	@Column(insertable=false, updatable = false)
-	private String mdp;
+	private String password;
 	
 	@Column(insertable=false, updatable = false)
 	@Enumerated(EnumType.STRING)
