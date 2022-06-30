@@ -9,6 +9,6 @@ import ma.ac.emi.ginf.exam.models.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
-	@Query("SELECT u FROM User u WHERE u.mail = :mail and u.mdp = :mdp")
-	User findUser(@Param("mail") String mail, @Param("mdp") String mdp);
+	User findByMailAndPassword(String mail, String password);
+
 }

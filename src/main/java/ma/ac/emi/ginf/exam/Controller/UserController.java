@@ -23,7 +23,7 @@ public class UserController {
 	@PostMapping(value = "/", consumes = {"*/*"})
 		public ResponseEntity<User> findUserById(@RequestBody User user ) {
 
-		User u = ur.findUser(user.getMail(),user.getMdp());
+		User u = ur.findByMailAndPassword(user.getMail(),user.getMdp());
 
 	    if(u!=null) {
 	        return ResponseEntity.ok().body(u);

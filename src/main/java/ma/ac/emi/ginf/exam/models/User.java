@@ -31,19 +31,19 @@ public class User {
 		super();
 	}
 	
-	public User(String mail,String us, String mdp, UserType role) {
+	public User(String mail,String us, String password, UserType role) {
 		super();
 		setMail(mail);
 		setUsername(us);
-		setMdp(mdp);
+		setMdp(password);
 		setRole(role);
 	}
 	
 	
 	@JsonIgnore
-	@JsonProperty(value = "mdp")
+	@JsonProperty(value = "password")
 	public String getMdp() {
-		return(this.mdp);
+		return(this.password);
 	}
 	
 	
@@ -67,8 +67,8 @@ public class User {
 		this.username = username;
 	}
 	
-	public void setMdp(String mdp) {
-		this.mdp = mdp;
+	public void setMdp(String password) {
+		this.password = password;
 	}
 	public UserType getRole() {
 		return role;
@@ -79,7 +79,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return this.id + " User : " + this.username + " " + this.mdp + " " + this.role;
+		return this.id + " User : " + this.username + " " + this.password + " " + this.role;
 	}
 	
 }
